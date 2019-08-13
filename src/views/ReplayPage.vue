@@ -1,6 +1,6 @@
 <template>
     <div class="player-box">
-        <div ref="whiteboard" class="whiteboard-layer"></div>
+        <div class="player-whiteboard" ref="whiteboard"></div>
     </div>
 </template>
 
@@ -12,6 +12,19 @@
             return {
                 play: null,
             }
+        },
+        methods: {
+            onWindowResize() {
+                if (this.player) {
+                    this.player.refreshViewSize();
+                }
+            }
+        },
+        beforeMount(){
+            window.addEventListener("resize", this.onWindowResize);
+        },
+        beforeDestroy(){
+            window.removeEventListener("resize", this.onWindowResize);
         },
         async mounted() {
             const uuid = this.$route.params.uuid;
@@ -47,13 +60,13 @@
     .player-box {
         width: 100%;
         height: 100vh;
+        text-align: left;
     }
-    .whiteboard-layer {
-        width: 960px;
-        height: 960px;
+    .player-whiteboard {
+        width: 100%;
+        height: 100%;
         position: absolute;
         z-index: -1;
-        background-color: yellow;
     }
 </style>
 
