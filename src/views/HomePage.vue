@@ -3,38 +3,24 @@
         <img src="../assets/netless_black.svg"/>
         <div class="page-input-left-box">
             <div class="page-input-left-mid-box">
-                <a-tabs class="page-input-left-mid-box-tab" defaultActiveKey="1">
-                    <a-tab-pane tab="创建房间" key="1">
-                        <div class="page-input-left-inner-box">
-                            <a-input class="page-input" size="large" placeholder="输入用户名"/>
-                            <router-link to="/classroom">
-                                <a-button
-                                        size="large"
-                                        type="primary"
-                                        class="name-button">
-                                    创建在线教室
-                                </a-button>
-                            </router-link>
-                            <a-button
-                                    size="large"
-                                    class="name-button">
-                                创建白板房间
-                            </a-button>
-                        </div>
-                    </a-tab-pane>
-                    <a-tab-pane tab="加入房间" key="2">
-                        <div class="page-input-left-inner-box">
-                            <a-input class="page-input"
-                                     size="large" placeholder="输入房间地址或者 UUID"/>
-                            <a-button
-                                    size="large"
-                                    type="primary"
-                                    class="name-button">
-                                加入房间
-                            </a-button>
-                        </div>
-                    </a-tab-pane>
-                </a-tabs>
+                <div class="page-input-left-inner-box">
+                    <router-link to="/room_input">
+                        <a-button
+                                size="large"
+                                type="primary"
+                                class="name-button">
+                            实时教室测试
+                        </a-button>
+                    </router-link>
+                    <router-link to="/replay_input">
+                        <a-button
+                                style="margin-top: 24px"
+                                size="large"
+                                class="name-button">
+                            回放教室测试
+                        </a-button>
+                    </router-link>
+                </div>
             </div>
         </div>
         <div class="page-input-right-box"></div>
@@ -50,7 +36,7 @@
     Vue.use(Tabs.TabPane);
     Vue.use(Input);
     export default {
-        name: 'Homepage',
+        name: 'HomePage',
     }
 </script>
 <style scoped lang="less">
@@ -76,9 +62,10 @@
     }
     .page-input-left-mid-box {
         width: 360px;
-        height: 320px;
+        height: 280px;
         display: flex;
         justify-content: center;
+        align-items: center;
         box-sizing: border-box;
         padding-right: 20px;
         padding-left: 20px;
@@ -95,7 +82,6 @@
     }
     .name-button {
         width: 240px;
-        margin-top: 24px;
         font-size: 14px;
     }
     .page-input-left-mid-box-tab {
@@ -109,7 +95,6 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-top: 8px;
     }
     .page-input-right-box {
         width: 50%;
