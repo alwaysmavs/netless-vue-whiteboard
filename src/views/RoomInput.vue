@@ -1,5 +1,8 @@
 <template>
     <div class="test-box">
+        <router-link to="/">
+            <img class="logo" src="../assets/netless_black.svg"/>
+        </router-link>
         <a-form
                 style="margin-top: 24px"
                 :form="form"
@@ -98,6 +101,10 @@
 
     .test-tab {
         width: 300px;
+    }
+
+    .logo {
+
     }
 
     .test-tab-inner-box {

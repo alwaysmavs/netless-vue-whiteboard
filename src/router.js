@@ -33,7 +33,7 @@ export default new Router({
           component: RoomPage
       },
       {
-          path: '/replay/:uuid/:room_token',
+          path: '/replay/:uuid/:room_token/:media?',
           name: 'ReplayPage',
           component: ReplayPage,
       },
