@@ -74,6 +74,22 @@
                 <a-form-item
                         v-bind="formItemLayout"
                         hasFeedback
+                        label="startTime">
+                    <a-input
+                            size="large"
+                            v-decorator="[
+                                'start_time_player',
+                                {
+                                rules: [{
+                                  message: '输入开始时间',
+                                }],
+                            }
+                        ]"
+                            placeholder="开始时间"/>
+                </a-form-item>
+                <a-form-item
+                        v-bind="formItemLayout"
+                        hasFeedback
                         label="media">
                     <a-input
                             size="large"
@@ -137,7 +153,14 @@
                 this.form.validateFields((err, values) => {
                     console.log('Received values of form: ', values);
                     if (!err) {
-                        this.$router.push({path: `/replay/${values.uuid_replay}/${values.room_token_replay}`})
+                        // this.$router.push({path: `/replay/${values.uuid_replay}/${values.room_token_replay}`})
+                        this.$router.push({
+                            name: "ReplayPage",
+                            params: {
+                                uuid: values.uuid_replay,
+                                room_token: values.room_token_replay,
+                                start_time: values.start_time_player,
+                            }});
                     }
                 });
             },

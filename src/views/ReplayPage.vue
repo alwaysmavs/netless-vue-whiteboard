@@ -41,19 +41,22 @@
             const whiteWebSdk = new WhiteWebSdk();
                 if (uuid && room_token) {
                     let media = this.$route.params.media;
+                    let start_time = this.$route.params.start_time;
                     if (!media) {
                         media = "8311a131bd4475d6b4522590deb63fd5_ce9bf22534ee41928b0b9203ef0c3248.m3u8";
                     }
-                    const mediaUrl = `https://netless-media.oss-cn-hangzhou.aliyuncs.com/${media}`;
+                   const mediaUrl = `https://netless-media.oss-cn-hangzhou.aliyuncs.com/${media}`;
                     const player = await whiteWebSdk.replayRoom({
                         room: uuid,
                         roomToken: room_token,
-                        mediaURL: mediaUrl,
+                        beginTimestamp: parseInt(start_time),
+                        mediaUrl: mediaUrl,
                     }, {
                         onPhaseChanged: phase => {
                             console.log(phase);
                         },
                         onLoadFirstFrame: () => {
+                            console.log("onload")
                         },
                         onPlayerStateChanged: modifyState => {
                             console.log(modifyState);
