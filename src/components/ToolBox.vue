@@ -1,6 +1,6 @@
 <template>
     <div class="tool-box">
-        <div class="tool-cell" :key='item' v-for="item in items">
+        <div class="tool-cell" :key='item.iconUrl' v-for="item in items">
             <img class="tool-cell-img" :src="item.iconUrl"/>
         </div>
     </div>
@@ -15,6 +15,11 @@
     import rectangle from '../assets/rectangle.svg'
     export default {
         name: 'ToolBox',
+        props() {
+            return {
+                room: null,
+            }
+        },
         data() {
             return {
                 items: [
@@ -28,6 +33,9 @@
             }
         },
         beforeCreate () {
+        },
+        mounted() {
+            console.log(this.props.room);
         },
         methods: {
         },
