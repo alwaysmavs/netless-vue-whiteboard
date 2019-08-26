@@ -1,6 +1,6 @@
 <template>
     <div class="tool-box">
-        <div class="tool-cell" :key='item.iconUrl' v-for="item in items">
+        <div @click="selectTool(item.name)" class="tool-cell" :key='item.iconUrl' v-for="item in items">
             <img class="tool-cell-img" :src="item.iconUrl"/>
         </div>
     </div>
@@ -15,11 +15,7 @@
     import rectangle from '../assets/rectangle.svg'
     export default {
         name: 'ToolBox',
-        props() {
-            return {
-                room: null,
-            }
-        },
+        props: ['room'],
         data() {
             return {
                 items: [
@@ -29,15 +25,21 @@
                     { name: 'eraser', iconUrl: eraser},
                     { name: 'ellipse', iconUrl: ellipse},
                     { name: 'rectangle', iconUrl: rectangle}
-                ]
+                ],
+                roomObj: this.room,
             }
         },
         beforeCreate () {
         },
         mounted() {
-            console.log(this.props.room);
+            console.log(this.roomObj);
         },
         methods: {
+            selectTool(name) {
+                this.roomObj.setMemberState({
+                    currentApplianceName: name,
+                });
+            },
         },
     }
 </script>

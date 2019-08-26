@@ -2,7 +2,7 @@
     <div class="whiteboard-box">
         <div class="whiteboard-box-left">
             <div class="whiteboard-toolbox-out">
-                <a-toolbox :room="room"></a-toolbox>
+                <a-toolbox v-if="room !== null" :room="room"></a-toolbox>
             </div>
             <div class="room-whiteboard" ref="whiteboard">
             </div>
@@ -65,7 +65,7 @@
                         console.error("kicked with reason: " + reason);
                     },
                     onRoomStateChanged: modifyState => {
-                        console.error("kicked with reason: " + modifyState);
+                        console.log(modifyState)
                     },
                 });
                 this.room = room;
