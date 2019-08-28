@@ -1705,9 +1705,9 @@ bcrypt-pbkdf@^1.0.0:
     tweetnacl "^0.14.3"
 
 bezier-js@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.npm.taobao.org/bezier-js/download/bezier-js-2.4.0.tgz#8fb65113e01c7d3e443aa9fd66921478befc24a0"
-  integrity sha1-j7ZRE+AcfT5EOqn9ZpIUeL78JKA=
+  version "2.4.3"
+  resolved "https://registry.npm.taobao.org/bezier-js/download/bezier-js-2.4.3.tgz#c11b899fdfb44a41d14c5d648eb8ee3ec48c79f1"
+  integrity sha1-wRuJn9+0SkHRTF1kjrjuPsSMefE=
 
 bfj@^6.1.1:
   version "6.1.2"
@@ -4708,7 +4708,7 @@ is-fullwidth-code-point@^3.0.0:
 
 is-function@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.npm.taobao.org/is-function/download/is-function-1.0.1.tgz#12cfb98b65b57dd3d193a3121f5f6e2f437602b5"
+  resolved "https://registry.npm.taobao.org/is-function/download/is-function-1.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-function%2Fdownload%2Fis-function-1.0.1.tgz#12cfb98b65b57dd3d193a3121f5f6e2f437602b5"
   integrity sha1-Es+5i2W1fdPRk6MSH19uL0N2ArU=
 
 is-glob@^3.1.0:
@@ -6874,7 +6874,7 @@ rc@^1.2.7:
 
 react-dom@^16.8.4:
   version "16.9.0"
-  resolved "https://registry.npm.taobao.org/react-dom/download/react-dom-16.9.0.tgz#5e65527a5e26f22ae3701131bcccaee9fb0d3962"
+  resolved "https://registry.npm.taobao.org/react-dom/download/react-dom-16.9.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-dom%2Fdownload%2Freact-dom-16.9.0.tgz#5e65527a5e26f22ae3701131bcccaee9fb0d3962"
   integrity sha1-XmVSel4m8irjcBExvMyu6fsNOWI=
   dependencies:
     loose-envify "^1.1.0"
@@ -6894,7 +6894,7 @@ react-lifecycles-compat@^3.0.2:
 
 react@^16.8.4:
   version "16.9.0"
-  resolved "https://registry.npm.taobao.org/react/download/react-16.9.0.tgz?cache=0&sync_timestamp=1565317892814&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact%2Fdownload%2Freact-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
+  resolved "https://registry.npm.taobao.org/react/download/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
   integrity sha1-QLovmvE7waONddvy9DWaUYXE96o=
   dependencies:
     loose-envify "^1.1.0"
@@ -7311,7 +7311,7 @@ sax@^1.2.4, sax@~1.2.4:
 
 scheduler@^0.15.0:
   version "0.15.0"
-  resolved "https://registry.npm.taobao.org/scheduler/download/scheduler-0.15.0.tgz#6bfcf80ff850b280fed4aeecc6513bc0b4f17f8e"
+  resolved "https://registry.npm.taobao.org/scheduler/download/scheduler-0.15.0.tgz?cache=0&sync_timestamp=1565317903688&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fscheduler%2Fdownload%2Fscheduler-0.15.0.tgz#6bfcf80ff850b280fed4aeecc6513bc0b4f17f8e"
   integrity sha1-a/z4D/hQsoD+1K7sxlE7wLTxf44=
   dependencies:
     loose-envify "^1.1.0"
@@ -8715,10 +8715,10 @@ which@^1.2.9:
   dependencies:
     isexe "^2.0.0"
 
-white-web-sdk@^2.2.12:
-  version "2.2.12"
-  resolved "https://registry.npm.taobao.org/white-web-sdk/download/white-web-sdk-2.2.12.tgz#b6bf2d42077389a98781b8251c60619fe1e8adaa"
-  integrity sha1-tr8tQgdziamHgbglHGBhn+Horao=
+white-web-sdk@^2.2.13:
+  version "2.2.13"
+  resolved "https://registry.npm.taobao.org/white-web-sdk/download/white-web-sdk-2.2.13.tgz#7ca9aa2eba565fb800c83843e21b5691c39ad250"
+  integrity sha1-fKmqLrpWX7gAyDhD4htWkcOa0lA=
   dependencies:
     bezier-js "^2.4.0"
     color "^3.1.2"
