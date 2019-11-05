@@ -1280,6 +1280,11 @@ aes-decrypter@3.0.0:
     global "^4.3.2"
     pkcs7 "^1.0.2"
 
+agora-rtc-sdk@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.npm.taobao.org/agora-rtc-sdk/download/agora-rtc-sdk-2.9.0.tgz#e94ce100c67b16b9e3919ff314995daf6e4e5359"
+  integrity sha1-6UzhAMZ7FrnjkZ/zFJldr25OU1k=
+
 ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/ajv-errors/download/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"

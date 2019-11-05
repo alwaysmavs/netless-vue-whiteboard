@@ -1,23 +1,11 @@
 <template>
-    <div class="whiteboard-box">
-        <div class="whiteboard-box-left">
-            <div class="whiteboard-toolbox-out">
-                <a-toolbox v-if="room !== null" :room="room"></a-toolbox>
-            </div>
-            <div class="room-whiteboard" ref="whiteboard">
-            </div>
-        </div>
-        <div class="whiteboard-box-right">
-            <div class="whiteboard-box-right-up"></div>
-            <div class="whiteboard-box-right-down"></div>
-        </div>
+    <div id="nsawhiteboard" class="whiteboard-box">
     </div>
 </template>
 
 <script>
-    import {WhiteWebSdk} from "white-web-sdk";
-    import ToolBox from "../components/ToolBox";
     import {netlessWhiteboardApi} from "../apiMiddleware/netlessWhiteboardApi";
+    import AgoraRTC from "agora-rtc-sdk";
     export default {
         name: 'Whiteboard',
         data() {
@@ -48,33 +36,61 @@
         },
         async mounted() {
             const uuid = this.$route.params.uuid;
-            const whiteWebSdk = new WhiteWebSdk();
             const roomToken = await this.getRoomToken(uuid);
             if (uuid && roomToken) {
-                const room = await whiteWebSdk.joinRoom({
+                window.WhiteFastSDK.Room("nsawhiteboard",{
                     uuid: uuid,
                     roomToken: roomToken,
-                }, {
-                    onPhaseChanged: phase => {
-                        console.log(`room changed: ${phase}`);
-                    },
-                    onDisconnectWithError: error => {
-                        console.error(error);
-                    },
-                    onKickedWithReason: reason => {
-                        console.error("kicked with reason: " + reason);
-                    },
-                    onRoomStateChanged: modifyState => {
-                        console.log(modifyState)
-                    },
+                    userId: "98888",
+                    userName: "netless", // 可选，名字
+                    userAvatarUrl: "https://ohuuyffq2.qnssl.com/netless_icon.png", // 可选，头像
+                    logoUrl: "", // 可选，头像
+                    toolBarPosition: "left", // 可选，工具栏位置
+                    pagePreviewPosition: "right", // 可选，预览侧边的位置
+                    boardBackgroundColor: "#F2F2F2", // 可选，白板背景颜色
+                    isReadOnly: false, // 可选，订阅者是否可以操作
+                    identity: "host", // 可选，身份 host, guest, listener
+                    defaultColorArray: [
+                        "#E77345",
+                        "#005BF6",
+                        "#F5AD46",
+                        "#68AB5D",
+                        "#9E51B6",
+                        "#1E2023",
+                    ], // 可选，教具颜色列表，可通过界面进行添加新颜色，添加后 colorArrayStateCallback 会回调所有颜色列表
+                    rtc: {
+                        type: "agora",
+                        rtcObj: AgoraRTC,
+                        token: "8595fd46955f427db44b4e9ba90f015d",
+                    }, // 可选，这里以声网为例
+                    language: "Chinese", // 启用英文为 "English"
+                    isManagerOpen: true, // 侧边控制栏目是否默认打开
+                    uploadToolBox: [
+                        {
+                            enable: true, // true 为启用， false 为尽用
+                            type: "image", // image（图片）、static_conversion（静态 ppt）、dynamic_conversion (动态 ppt)
+                            icon: "", // 图片 icon
+                            title: "", // 标题
+                            script: "", // 描述
+                        },
+                        {
+                            enable: true,
+                            type: "static_conversion",
+                            icon: "",
+                            title: "",
+                            script: "",
+                        },
+                        {
+                            enable: true,
+                            type: "dynamic_conversion",
+                            icon: "",
+                            title: "",
+                            script: "",
+                        },
+                    ], // 侧边上传按钮是否启用
                 });
-                this.room = room;
-                room.bindHtmlElement(this.$refs.whiteboard);
             }
         },
-        components: {
-            "a-toolbox": ToolBox
-        }
     }
 </script>
 <style scoped lang="less">
